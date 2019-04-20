@@ -1,0 +1,69 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package servidor;
+
+import com.google.gson.Gson;
+import com.sun.management.OperatingSystemMXBean;
+import java.lang.management.ManagementFactory;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Produces;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PUT;
+import javax.ws.rs.core.MediaType;
+
+/**
+ * REST Web Service
+ *
+ * @author Helbert Monteiro
+ */
+@Path("servidor")
+public class Servidor {
+
+    @Context
+    private UriInfo context;
+
+    /**
+     * Creates a new instance of Servidor
+     */
+    public Servidor() {
+        
+    }
+    
+    public void Consumo(){
+        
+    }
+
+    /**
+     * Retrieves representation of an instance of servidor.Servidor
+     * @return an instance of java.lang.String
+     */
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getJson() {
+        //TODO return proper representation object
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * PUT method for updating or creating an instance of Servidor
+     * @param content representation for the resource
+     */
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void putJson(String content) {
+    }
+    
+    @Path("contar")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public int contar(String texto){
+        return new Contador().contar(texto);
+    }
+}
